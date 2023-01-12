@@ -11,7 +11,7 @@ export default class {
         console.log("window loaded");
         var script = document.createElement('script');
         script.type = 'text/javascript';
-        script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCzQ8NEbOKTsqb9G5HV9tE4GQVY2LJG9NE&callback=myMap';
+        script.src = '#';
         document.body.appendChild(script);
         console.log("window loaded done");
         
