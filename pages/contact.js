@@ -36,7 +36,7 @@ export default class {
 
                 <div class='contact_email_form'>
                     <form id="emailForm" class="gform" method="POST" data-email="cafefore4400@gmail.com" 
-                    action="https://script.google.com/macros/s/AKfycbzKQuHQz2gEi9Zn7Ap4YuwhYqZNsjYaBw24s59id0HyH-dViyhCQiGCYacALZxKf4BZ/exec"
+                    action="#"
                     onsubmit="return handleFormSubmit(event)">
                         <div class="form-row">
                             <div class="contact_name_email">
