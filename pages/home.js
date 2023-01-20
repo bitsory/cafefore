@@ -46,7 +46,7 @@ export default class {
                 <div class="home_pic pic3">
                     <div class="home_video">
                     <video autoplay muted loop class="myVideo">
-                        <source src="./images/home_v.mp4" type="video/mp4">
+                        <source src="/cafefore/images/home_v.mp4" type="video/mp4">
                     </video>
                     </div>
                 </div>
