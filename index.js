@@ -2,7 +2,7 @@ import Home from "./pages/home.js";
 import About from "./pages/about.js";
 import Menu from "./pages/menu.js";
 import Contact from "./pages/contact.js";
-import NotFound from "./pages/notFound.js";
+import NotFound from "./pages/notfound.js";
 import Product from "./pages/product.js";
 
 const toggleBtn = document.querySelector('.navbar_toggleBtn');
