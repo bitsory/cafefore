@@ -71,7 +71,7 @@ export default class {
     sendmail() {
         var script = document.createElement('script');
         script.type = 'text/javascript';
-        script.src = "cafefore/pages/sendmail.js";
+        script.src = '#';
         document.body.appendChild(script);
         console.log("contact test");
         
@@ -94,7 +94,7 @@ export default class {
 
                 <div class='contact_email_form'>
                     <form id="emailForm" class="gform" method="POST" data-email="cafefore4400@gmail.com" 
-                    action="https://script.google.com/macros/s/AKfycbzKQuHQz2gEi9Zn7Ap4YuwhYqZNsjYaBw24s59id0HyH-dViyhCQiGCYacALZxKf4BZ/exec"
+                    action="#"
                     onsubmit="return handleFormSubmit(event)">
                         <div class="form-row">
                             <div class="contact_name_email">
