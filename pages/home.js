@@ -34,11 +34,34 @@ export default class {
                 Cafe FORE</h1>
             </div>
 
-            <div class="q_btn_container">
-                <button class="q_menu q_btn"><a href="/menu" data-link>MENU</a></button>
-                <button class="q_order q_btn">ORDER</button>
-                <button class="q_call q_btn">CALL</button>
+            <div class="home_pic">
+                <div class="home_pic pic1">
+                    <div class="home_pic_div sm_cho">
+                        
+                    </div>
+                </div>
+                <div class="home_pic pic2">
+                    <div class="sm_neon"></div>
+                </div>
+                <div class="home_pic pic3">
+                    <div class="home_video">
+                    <video autoplay muted loop class="myVideo">
+                        <source src="/cafeFORE/images/home_v.mp4" type="video/mp4">
+                    </video>
+                    </div>
+                </div>
+
             </div>
+
+            <div class="q_btn_container">
+                <button type="button" class="q_menu q_btn">
+                <a href="/menu" data-link style="color: white";>MENU</a></button>
+                <button type="button" class="q_order q_btn">
+                <a href="#" data-link style="color: white";>ORDER</a></button>
+                <button type="button" class="q_call q_btn">
+                <a href='tel:470-263-6495' style="color: white";>CALL</a></button>
+            </div>
+
         `;
     }
 }

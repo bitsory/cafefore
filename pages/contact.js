@@ -7,23 +7,81 @@ export default class {
 
     }
 
-    gmLoad() {
-        console.log("window loaded");
-        var script = document.createElement('script');
-        script.type = 'text/javascript';
-        script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCzQ8NEbOKTsqb9G5HV9tE4GQVY2LJG9NE&callback=myMap';
-        document.body.appendChild(script);
-        console.log("window loaded done");
+    gmap() {
+        // if(this.gmCheck()) {
+        //     var $gmp = document.querySelector('.gmp');
+        //     $gmp.remove();
+        // }
+            console.log("gmap loaded");
+            var script = document.createElement('script');
+            script.setAttribute('class', 'gmp'); 
+            script.type = 'text/javascript';
+            script.src = "cafefore/pages/gmap.js";
+            document.body.appendChild(script);
+
+            var $gmp = document.querySelector('.gmp');
+            $gmp.remove();
         
     }
-    
 
-    test() {
+    gmLoad() {
+        // if(this.gmCheck()) {
+        //     var $gmp = document.querySelector('.gmp');
+        //     $gmp.remove();
+        // }
+            console.log("gmLoad loaded");
+            var script = document.createElement('script');
+            script.setAttribute('class', 'gmp'); 
+            script.type = 'text/javascript';
+            script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCppB7-BJTjRkekYoOWKJhFK3LrxA5ZxP4&callback=myMap&';
+            document.body.appendChild(script);
+            console.log("gmLoad loaded done");
+        
+            var $gmp = document.querySelector('.gmp');
+            $gmp.remove();
+        
+        
+    }
+
+    gmCheck() {
+        // var gmap = document.querySelector('#googleMap');
+        // gmap.remove();
+        console.log("gmcheck");
+
+        const allScripts = document.getElementsByTagName( 'script' );
+        
+        for(var i = 0; i < allScripts.length; i++){
+
+            console.log(allScripts[i].src.indexOf('key='));
+
+            if(allScripts[i].src.indexOf('key=') >= 0) {
+                console.log("gmcheck true");
+                return true;
+            }                    
+        }
+        return false;
+    }
+
+    gmRemove() {
+        console.log("gmremove");
+        var gmap = document.querySelector('#googleMap');
+        gmap.remove();
+    }
+
+    sendmail() {
+        var script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.src = "cafefore/pages/sendmail.js";
+        document.body.appendChild(script);
         console.log("contact test");
+        
     }
 
     getHtml() {  
+        this.gmap();
         this.gmLoad();
+        this.sendmail();
+        // this.gmRemove();
 
         return `
             <section id="contact">

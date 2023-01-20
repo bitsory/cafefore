@@ -3,7 +3,7 @@ import About from "./pages/about.js";
 import Menu from "./pages/menu.js";
 import Contact from "./pages/contact.js";
 import NotFound from "./pages/NotFound.js";
-
+import Product from "./pages/Product.js";
 
 const toggleBtn = document.querySelector('.navbar_toggleBtn');
 const menu = document.querySelector('.navbar_nav_list');
@@ -19,6 +19,8 @@ const mainback1 = document.querySelector('.mainback1');
 // const coffee_menu = document.querySelector('.coffee_menu');
 const footer = document.querySelector('.footer');
 const navbar_logo = document.querySelector('.navbar_logo');
+const foot_logo = document.querySelector('.foot_logo');
+const gotoTop = document.querySelector('.fa-angles-up');
 
 
 toggleBtn.addEventListener('click', (e) => {
@@ -48,6 +50,20 @@ navbar_logo.addEventListener('click', () => {
     window.location.href = "http://127.0.0.1:5500/cafefore";
 });
 
+foot_logo.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'smooth'});
+});
+
+gotoTop.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'smooth'});
+});
+
 
 
 const router = async () => {
@@ -57,8 +73,9 @@ const router = async () => {
         { path: "/cafeFORE/", view1: Home },
         { path: "/cafeFORE/index.html", view1: Home },
         { path: "/about", view1: About },
-        { path: "/menu", view1: Menu },
+        { path: "/menu" || "127.0.0.1:5500/menu", view1: Menu },
         { path: "/contact", view1: Contact },
+        { path: "/product", view1: Product },
     ];
 
     console.log("router");
@@ -101,7 +118,7 @@ const router = async () => {
         
         }
 
-        if(match.route.path == "/about" || match.route.path == "/menu" || match.route.path == "/contact") {
+        if(match.route.path == "/about" || match.route.path == "/menu" || match.route.path == "/contact" || match.route.path == "/product") {
             console.log(match.route.path);
             main_background.style.display = "none";
         }
@@ -112,6 +129,12 @@ const router = async () => {
             page.menuEventListener();
         
         }
+
+        // if((match.route.path == "/about" || match.route.path == "/menu" || match.route.path == "/") && gmCheck() == true) {
+            
+        //      gmRemove();           
+        
+        // }
 
      
 
@@ -127,7 +150,10 @@ const router = async () => {
             toggleBtn.classList.toggle('on');
             console.log(`menu.classList.length: ${menu.classList.length}`);
         }
-    }    
+
+        
+    }
+
 };
 
 // 뒤로 가기 할 때 데이터 나오게 하기 위함
@@ -148,6 +174,18 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     router();
 });
+
+window.addEventListener('beforeunload', (event) => {
+    // 명세에 따라 preventDefault는 호출해야하며, 기본 동작을 방지합니다.
+    console.log("reload");
+    // event.preventDefault();
+
+    // 대표적으로 Chrome에서는 returnValue 설정이 필요합니다.
+    // event.returnValue = '';
+    window.location.href = "http://127.0.0.1:5500/cafefore";
+});
+
+
 
 
 

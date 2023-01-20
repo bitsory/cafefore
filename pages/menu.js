@@ -20,6 +20,19 @@ export default class {
         console.log("Menu page test");
     }
 
+    menuIconClickEvent (event) {
+        event.target.style.backgroundColor = 'cornflowerblue';
+        event.target.style.borderRadius = '20% 20% 20% 20%';
+    }
+
+    menuIconClickEvent2 () {
+        this.coffee_btn.style.backgroundColor = '';
+        this.smoothie_btn.style.backgroundColor = '';
+        this.kbop_btn.style.backgroundColor = '';
+        this.acai_btn.style.backgroundColor = '';
+        this.wellness_btn.style.backgroundColor = '';
+    }
+
     menuSelector() {
         this.menu_article = document.querySelector('.menu_article');
     
@@ -31,8 +44,10 @@ export default class {
     }
 
     menuEventListener () {
-        this.coffee_btn.addEventListener('click', ()=> {
+        this.coffee_btn.addEventListener('click', (event)=> {
             console.log("coffee event listener");
+            this.menuIconClickEvent2 ();
+            this.menuIconClickEvent (event);
             document.querySelector(".menu_article").innerHTML = 
             `<div class="menu_gl menu_coffee">
             <div class="menu_gl menu_category">
@@ -68,8 +83,10 @@ export default class {
             `;
         });
 
-        this.smoothie_btn.addEventListener('click', ()=> {
+        this.smoothie_btn.addEventListener('click', (event)=> {
             console.log("smoothie event listener");
+            this.menuIconClickEvent2 ();
+            this.menuIconClickEvent (event);
             document.querySelector(".menu_article").innerHTML = 
         `<div class="menu_gl menu_smoothie">
             <div class="menu_gl menu_category">
@@ -149,8 +166,10 @@ export default class {
             ;
         });
 
-        this.kbop_btn.addEventListener('click', ()=> {
+        this.kbop_btn.addEventListener('click', (event)=> {
             console.log("kbop event listener");
+            this.menuIconClickEvent2 ();
+            this.menuIconClickEvent (event);            
             document.querySelector(".menu_article").innerHTML = 
             `<div class="menu_gl menu_kbop">
                 <div class="menu_gl menu_category">
@@ -158,12 +177,20 @@ export default class {
                 </div>
                 <div class="menu_items">
                     <div class="menu_item">
+                        <div class="menu_item_title">Ramen</div>
+                        <div class="menu_item_price">$5.95</div>
+                        <div class="menu_item_description">Instant Noodle /w Special Add on<br>(Dine-in only)</div>
+                    </div>
+                    <div class="menu_item">
                         <div class="menu_item_title">Cup Ramen Fried Rice</div>
                         <div class="menu_item_price">$6.75</div>
+                        <div class="menu_item_description">Korean Style Street Food<br>Fried Rice in Cup Noodle</div>
                     </div>
                     <div class="menu_item">
                         <div class="menu_item_title">Bulgogi Cup-Bop</div>
-                        <div class="menu_item_price">$8.50</div>
+                        <div class="menu_item_price">$9.25</div>
+                        <div class="menu_item_description">Marinated Beef with White Rice & Glass Noodle in the Bowl<br>
+                        choice Hot Spicy, Peanut-Soy, Mayo sauce</div>
                     </div>
                 </div>
             </div>           
@@ -172,8 +199,10 @@ export default class {
             `;
         });
 
-        this.acai_btn.addEventListener('click', ()=> {
+        this.acai_btn.addEventListener('click', (event)=> {
             console.log("acai event listener");
+            this.menuIconClickEvent2 ();
+            this.menuIconClickEvent (event);            
             document.querySelector(".menu_article").innerHTML = 
             `<div class="menu_gl menu_acai">
             <div class="menu_gl menu_category">
@@ -199,8 +228,11 @@ export default class {
             `;
         });
 
-        this.wellness_btn.addEventListener('click', ()=> {
+        this.wellness_btn.addEventListener('click', (event)=> {
             console.log("wellness_btn event listener");
+            this.menuIconClickEvent2 ();
+            console.log(event.target);
+            this.menuIconClickEvent (event);
             document.querySelector(".menu_article").innerHTML = 
             
         `<div class="menu_gl menu_wellness">
@@ -230,8 +262,6 @@ export default class {
                 </div>
             </div>
         </div>
-            
-            
             `;
         });
     }
@@ -249,22 +279,30 @@ export default class {
             <div class="our_menu">OUR MENU</div>
                 <div class="menu_button">
                     <div class="sqs" id="sqs_coffee">
-                        <button class="coffee_button"></button>
+                        <button class="coffee_button mn_btn"></button>
                     </div>
                     <div class="sqs" id="sqs_smoothie">
-                        <button class="smoothie_button"></button>
+                        <button class="smoothie_button mn_btn"></button>
                     </div>
                     <div class="sqs" id="sqs_kbop">
-                        <button class="kbop_button"></button>
+                        <button class="kbop_button mn_btn"></button>
                     </div>  
                     <div class="sqs" id="sqs_acai">
-                        <button class="acai_button"></button>
+                        <button class="acai_button mn_btn"></button>
                     </div>
                     <div class="sqs" id="sqs_wellness">
-                        <button class="wellness_button"></button>
+                        <button class="wellness_button mn_btn"></button>
                     </div>
                 </div>    
-                <div class="menu_article"></div>    
+                <div class="menu_article"></div>
+                <div class="q_btn_container">
+                    <button type="button" class="q_menu q_btn">
+                    <a href="/menu" data-link style="color: white";>MENU</a></button>
+                    <button type="button" class="q_order q_btn">
+                    <a href="#" data-link style="color: white";>ORDER</a></button>
+                    <button type="button" class="q_call q_btn">
+                    <a href='tel:470-263-6495' style="color: white";>CALL</a></button>
+                </div>    
                 `
             
                            
