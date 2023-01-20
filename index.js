@@ -1,9 +1,9 @@
-import Home from "./pages/Home.js";
+import Home from "./pages/home.js";
 import About from "./pages/about.js";
 import Menu from "./pages/menu.js";
 import Contact from "./pages/contact.js";
-import NotFound from "./pages/NotFound.js";
-import Product from "./pages/Product.js";
+import NotFound from "./pages/notFound.js";
+import Product from "./pages/product.js";
 
 const toggleBtn = document.querySelector('.navbar_toggleBtn');
 const menu = document.querySelector('.navbar_nav_list');
