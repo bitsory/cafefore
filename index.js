@@ -167,11 +167,14 @@ document.addEventListener("DOMContentLoaded", () => {
         console.log(`index.js document.body.addEventListener(click, (e): ${JSON.stringify(e)}`);
         
         if (e.target.matches("[data-link]")) {
+            console.log("data - link router before");
             e.preventDefault();
             history.pushState(null, null, e.target.href);
             router();
+            console.log("data - link router after");
         }
     });
+    console.log("data - link router router");
     router();
 });
 
