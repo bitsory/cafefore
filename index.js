@@ -105,8 +105,7 @@ const router = async () => {
         document.querySelector(".lorem").innerHTML = await page.getHtml();
     } else {
         const page = new match.route.view1();
-        document.querySelector(".lorem").innerHTML = page.getHtml();
-        // page.testHome();
+        document.querySelector(".lorem").innerHTML = page.getHtml();        
         console.log(`page: ${JSON.stringify(page)}`);
         
         
