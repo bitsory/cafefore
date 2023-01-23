@@ -206,14 +206,14 @@ nav {
     aspect-ratio: 16/8;   
     
 }
-
+/* 
 @supports not (aspect-ratio: 16/8) {
     .main_background {        
         height: 600px;
     }
 
 
-}
+} */
 
 .mainback1 {
     /* background-size: cover; */
@@ -663,7 +663,7 @@ i.fa-solid.fa-angles-up {
 
 
 @media screen and (max-width: 1024px) {
-
+/* 
     .main_background {
         aspect-ratio: 16/8
     }
@@ -675,7 +675,7 @@ i.fa-solid.fa-angles-up {
             height: 400px;
         }
     }
-
+ */
 
     .footer {
         display: flex;
