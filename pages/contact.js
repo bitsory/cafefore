@@ -77,7 +77,7 @@ export default class {
         
     }
 
-    getHtml() {  
+    async getHtml() {  
         this.gmap();
         this.gmLoad();
         this.sendmail();
