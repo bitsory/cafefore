@@ -81,7 +81,7 @@ export default class {
         this.gmap();
         this.gmLoad();
         this.sendmail();
-        // this.gmRemove();
+        
 
         return `
             <section id="contact">
