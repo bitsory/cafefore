@@ -105,8 +105,9 @@ const router = async () => {
         document.querySelector(".lorem").innerHTML = await page.getHtml();
     } else {
         const page = new match.route.view1();
-        document.querySelector(".lorem").innerHTML = await page.getHtml();
-        // page.testHome();
+
+        document.querySelector(".lorem").innerHTML = await page.getHtml();                     
+
         console.log(`page: ${JSON.stringify(page)}`);
         
         
@@ -128,15 +129,7 @@ const router = async () => {
             page.menuSelector();
             page.menuEventListener();
         
-        }
-
-        // if((match.route.path == "/about" || match.route.path == "/menu" || match.route.path == "/") && gmCheck() == true) {
-            
-        //      gmRemove();           
-        
-        // }
-
-     
+        }     
 
         if (menu.classList.length == 2) {
 
