@@ -20,7 +20,7 @@ export default class {
     }
 
 
-    getHtml() {
+    async getHtml() {
         return `
             <div class="home_description">
                 <h1>
