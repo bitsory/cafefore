@@ -106,10 +106,7 @@ const router = async () => {
     } else {
         const page = new match.route.view1();
 
-        document.querySelector(".lorem").innerHTML = await page.getHtml();
-        
-
-        document.querySelector(".lorem").innerHTML = page.getHtml();        
+        document.querySelector(".lorem").innerHTML = await page.getHtml();                     
 
         console.log(`page: ${JSON.stringify(page)}`);
         
@@ -132,15 +129,7 @@ const router = async () => {
             page.menuSelector();
             page.menuEventListener();
         
-        }
-
-        // if((match.route.path == "/about" || match.route.path == "/menu" || match.route.path == "/") && gmCheck() == true) {
-            
-        //      gmRemove();           
-        
-        // }
-
-     
+        }     
 
         if (menu.classList.length == 2) {
 
