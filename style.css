@@ -88,10 +88,6 @@ nav {
 
 }
 
-.home_pic_div {
-    
-}
-
 .pic1 {
     max-width: 100%;
     height: auto;
@@ -212,9 +208,7 @@ nav {
 }
 /* 
 @supports not (aspect-ratio: 16/8) {
-    .main_background {
-        display: flex;
-        width: 100%;
+    .main_background {        
         height: 600px;
     }
 
