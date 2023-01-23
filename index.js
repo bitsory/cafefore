@@ -73,7 +73,7 @@ const router = async () => {
         { path: "/cafeFORE/", view1: Home },
         { path: "/cafeFORE/index.html", view1: Home },
         { path: "/about", view1: About },
-        { path: "/menu" || "127.0.0.1:5500/menu", view1: Menu },
+        { path: "/menu", view1: Menu },
         { path: "/contact", view1: Contact },
         { path: "/product", view1: Product },
     ];
@@ -165,9 +165,10 @@ document.addEventListener("DOMContentLoaded", () => {
     
     document.body.addEventListener("click", (e) => {
         console.log(`index.js document.body.addEventListener(click, (e): ${JSON.stringify(e)}`);
-        
-        if (e.target.matches("[data-link]")) {
+        console.log(`index.js document.body.addEventListener(click, (e): ${e}`);
+        if (e.target.matches("[data-link-T]")) {
             console.log("data - link router before");
+            console.log(e.target);
             e.preventDefault();
             history.pushState(null, null, e.target.href);
             router();
@@ -176,16 +177,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     console.log("data - link router router");
     router();
-});
-
-window.addEventListener('beforeunload', (event) => {
-    // 명세에 따라 preventDefault는 호출해야하며, 기본 동작을 방지합니다.
-    console.log("reload");
-    // event.preventDefault();
-
-    // 대표적으로 Chrome에서는 returnValue 설정이 필요합니다.
-    // event.returnValue = '';
-    window.location.href = "http://127.0.0.1:5500/cafefore";
 });
 
 
