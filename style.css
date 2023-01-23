@@ -627,7 +627,7 @@ i.fa-solid.fa-angles-up {
   /* Pseudo elements for icons */
   .q_btn:before {
     font-family: 'FontAwesome';
-    speak: none;
+    
     font-style: normal;
     font-weight: normal;
     font-variant: normal;
