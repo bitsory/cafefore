@@ -267,8 +267,7 @@ export default class {
     }
     
 
-    getHtml() {
-        
+    async getHtml() {        
 
         return `
         <div class="menu_back">
