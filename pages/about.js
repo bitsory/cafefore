@@ -17,7 +17,7 @@ export default class {
             Order online or call now!!<br>            
             </h3>
             <div class="about_video">
-                <video src="/cafefore/images/about_video.mp4" autoplay muted loop class="aboutVideo" >
+                <video src="/cafefore/images/about_video.mp4" playsinline autoplay muted loop class="aboutVideo" >
                     
                 </video>
             </div>     

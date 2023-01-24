@@ -45,7 +45,7 @@ export default class {
                 </div>
                 <div class="home_pic pic3">
                     <div class="home_video">
-                    <video src="/cafefore/images/home_v.mp4" autoplay muted loop class="myVideo">
+                    <video src="/cafefore/images/home_v.mp4" playsinline autoplay muted loop class="myVideo">
                         
                     </video>
                     </div>
