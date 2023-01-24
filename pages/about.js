@@ -18,7 +18,8 @@ export default class {
             </h3>
             <div class="about_video">
                 <video autoplay muted loop class="aboutVideo">
-                    <source src="/cafefore/images/about_video.mp4" type="video/mp4">
+                    <source src="/cafefore/images/about_video.mp4" type="video/mp4" autoplay="autoplay" loop="loop" 
+                    muted="muted">
                 </video>
             </div>     
 
