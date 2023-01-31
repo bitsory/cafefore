@@ -6,8 +6,8 @@
     <!-- <meta name="viewport" content="width=device-width"> -->
     <meta content="width=device-width,minimum-scale=1.0" name="viewport">
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1"> -->
-    <link rel="stylesheet" href="style.css">
-	<title>Cafe FORE</title>    
+    <link rel="stylesheet" href="/cafefore/style.css">
+	<title>FORE Online</title>    
     <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Jost:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         *{      
@@ -53,12 +53,34 @@
 
     <section class="main">
         
-        <div class="main_background">
-            <div class="mainback1"></div>
+            <div class="lorem">
+                
+                <h1>Cafe FORE Online Shop</h1>
+                <div class="online_order">
+                    <div class="online_items">
+                        <div class="online_item_pic">
+                            <img src="../images/g_bt.png">
+                        </div>
+                        <div class="online_item_name">
+                            Ginger Bottle 16 oz.
+                        </div>
+                        <div class="online_item_price">
+                            $18.00
+                        </div>
+                        <div class="online_item_decription">
+                            100% Handmade Squeezed Ginger Juice
+                        </div>
+                        <div class="online_item_quantity"> 
+                            <div class="q_title">Quantity</div>
+                            <div id='q_result'>1</div>
+                            <input type='button' class="q_plus_btn" value='+'/>
+                            <input type='button' class="q_minus_btn" value='-'/>
+                        </div>
 
-        </div>
-            <div class="lorem">            
-        </div>
+                        <button class="place_order_btn">Place Order</button>
+                    </div>
+                </div>
+            </div>
        
     </section>
     
@@ -110,8 +132,9 @@
             </div>
         </div>        
     </section>
-	
-    <script type="module" src="index.js"></script>
+	<script type="module" src="shop.js"></script>
+    <script type="module" src="/cafefore/index.js"></script>
+    
 
     
 </body>

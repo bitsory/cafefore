@@ -3,7 +3,7 @@ import About from "./pages/about.js";
 import Menu from "./pages/menu.js";
 import Contact from "./pages/contact.js";
 import NotFound from "./pages/notfound.js";
-import Product from "./pages/product.js";
+
 
 const toggleBtn = document.querySelector('.navbar_toggleBtn');
 const menu = document.querySelector('.navbar_nav_list');
@@ -67,6 +67,8 @@ gotoTop.addEventListener('click', () => {
 
 
 const router = async () => {
+    console.log("router");
+    console.log(document.location.href);
     const routes = [
         { path: "/cafefore/", view1: Home },
         { path: "/", view1: Home },
@@ -75,10 +77,10 @@ const router = async () => {
         { path: "/about", view1: About },
         { path: "/menu", view1: Menu },
         { path: "/contact", view1: Contact },
-        { path: "/product", view1: Product },
+        { path: "/cafefore/shop/shop.html", view1: "Shop" },
     ];
 
-    console.log("router");
+    
     console.log(routes);
 
     const pageMatches = routes.map((route) => {
@@ -104,61 +106,72 @@ const router = async () => {
         const page = new NotFound();
         document.querySelector(".lorem").innerHTML = await page.getHtml();
     } else {
-        const page = new match.route.view1();
 
-        document.querySelector(".lorem").innerHTML = await page.getHtml();
-                  
-        console.log(`page: ${JSON.stringify(page)}`);
-        
-        
-        if(match.route.path == "/home" || match.route.path == "/" || match.route.path == "" || match.route.path == "/cafefore/" || match.route.path == "/cafeFORE/") {
-            console.log(match.route.path);
-            main_background.style.display = "flex";
-            page.quickButton();
-            page.quickBtnEventListener();
-        
-        }
-
-        if(match.route.path == "/about" || match.route.path == "/menu" || match.route.path == "/contact" || match.route.path == "/product") {
-            console.log(match.route.path);
-            main_background.style.display = "none";
-        }
-
-        if(match.route.path == "/menu") {
+        if (!(match.route.path == "/cafefore/shop/shop.html")){
+            console.log(" !!! shop");
+            const page = new match.route.view1();       
             
-            page.menuSelector();
-            page.menuEventListener();
+            document.querySelector(".lorem").innerHTML = await page.getHtml();
+                    
+            console.log(`page: ${JSON.stringify(page)}`);
         
-        }     
-
-        if (menu.classList.length == 2) {
-
-            console.log("length 2");
-            console.log("toggle on");
+        
+            if(match.route.path == "/home" || match.route.path == "/" || match.route.path == "" || match.route.path == "/cafefore/" || match.route.path == "/cafeFORE/") {
+                console.log(match.route.path);
+                main_background.style.display = "flex";
+                page.quickButton();
+                page.quickBtnEventListener();
             
-            main.classList.toggle('on');
-            menu.classList.toggle('on');
-            icons.classList.toggle('on');
-            footer.classList.toggle('on');
-            toggleBtn.classList.toggle('on');
-            console.log(`menu.classList.length: ${menu.classList.length}`);
+            }
+
+            if(match.route.path == "/about" || match.route.path == "/menu" || match.route.path == "/contact") {
+                console.log(match.route.path);
+                if(main_background) main_background.style.display = "none";
+            }
+
+            if(match.route.path == "/menu") {
+                console.log("menu selector");
+                page.menuSelector();
+                page.menuEventListener();
+            
+            }
+            
+            if (menu.classList.length == 2) {
+
+                console.log("length 2");
+                console.log("toggle on");
+                
+                main.classList.toggle('on');
+                menu.classList.toggle('on');
+                icons.classList.toggle('on');
+                 footer.classList.toggle('on');
+                toggleBtn.classList.toggle('on');
+                console.log(`menu.classList.length: ${menu.classList.length}`);
+            }
+
+        } else {
+            console.log("shop router run");
+            window.location.href = "http://127.0.0.1:5500/cafefore/shop/shop.html";
         }
 
         
     }
 
-};
+}; 
 
-// 뒤로 가기 할 때 데이터 나오게 하기 위함
-window.addEventListener("popstate", () => {
-    router();
-});
+window.addEventListener("popstate", router);
 
-document.addEventListener("DOMContentLoaded", () => {
+
+document.addEventListener("DOMContentLoaded", () => { // run first
+    var link = document.location.href; 
+    console.log(`link : ${link}`);
     
-    document.body.addEventListener("click", (e) => {
-        console.log(`index.js document.body.addEventListener(click, (e): ${JSON.stringify(e)}`);
-        console.log(`index.js document.body.addEventListener(click, (e): ${e}`);
+    document.body.addEventListener("click", (e) => { // menu link click
+        var link = document.location.href; 
+        console.log(`link : ${link}`);
+        
+        // console.log(`index.js document.body.addEventListener(click, (e): ${JSON.stringify(e)}`);
+        // console.log(`index.js document.body.addEventListener(click, (e): ${e}`);
         if (e.target.matches("[data-link-T]")) {
             console.log("data - link router before");
             console.log(e.target);
@@ -169,8 +182,14 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
     console.log("data - link router router");
-    router();
+    if (!(link == "http://127.0.0.1:5500/cafefore/shop/shop.html")) {// this is not a shop page
+        console.log("beginning main home page");
+        router(); 
+        console.log("after main home page");
+    } 
 });
+
+
 
 
 

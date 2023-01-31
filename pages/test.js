@@ -1,77 +1,31 @@
-
 export default class {
     constructor() {
         document.title = "Cafe FORE";
-        console.log("contact page");
+        console.log("contact");
         this.name='';
-
     }
 
     gmap() {
-        // if(this.gmCheck()) {
-        //     var $gmp = document.querySelector('.gmp');
-        //     $gmp.remove();
-        // }
-            console.log("gmap loaded");
-            var script = document.createElement('script');
-            script.setAttribute('class', 'gmp'); 
-            script.type = 'text/javascript';
-            script.src = "cafefore/pages/gmap.js";
-            document.body.appendChild(script);
-
-            var $gmp = document.querySelector('.gmp');
-            $gmp.remove();
-        
+        console.log("gmap loaded");
+        var script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.src = "/pages/gmap.js";
+        document.body.appendChild(script);
     }
 
     gmLoad() {
-        // if(this.gmCheck()) {
-        //     var $gmp = document.querySelector('.gmp');
-        //     $gmp.remove();
-        // }
-            console.log("gmLoad loaded");
-            var script = document.createElement('script');
-            script.setAttribute('class', 'gmp'); 
-            script.type = 'text/javascript';
-            script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCppB7-BJTjRkekYoOWKJhFK3LrxA5ZxP4&callback=myMap&';
-            document.body.appendChild(script);
-            console.log("gmLoad loaded done");
-        
-            var $gmp = document.querySelector('.gmp');
-            $gmp.remove();
-        
-        
-    }
-
-    gmCheck() {
-        // var gmap = document.querySelector('#googleMap');
-        // gmap.remove();
-        console.log("gmcheck");
-
-        const allScripts = document.getElementsByTagName( 'script' );
-        
-        for(var i = 0; i < allScripts.length; i++){
-
-            console.log(allScripts[i].src.indexOf('key='));
-
-            if(allScripts[i].src.indexOf('key=') >= 0) {
-                console.log("gmcheck true");
-                return true;
-            }                    
-        }
-        return false;
-    }
-
-    gmRemove() {
-        console.log("gmremove");
-        var gmap = document.querySelector('#googleMap');
-        gmap.remove();
+        console.log("gmLoad loaded");
+        var script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCzQ8NEbOKTsqb9G5HV9tE4GQVY2LJG9NE&callback=myMap';
+        document.body.appendChild(script);
+        console.log("gmLoad loaded done");        
     }
 
     sendmail() {
         var script = document.createElement('script');
         script.type = 'text/javascript';
-        script.src = '#';
+        script.src = "/pages/sendmail.js";
         document.body.appendChild(script);
         console.log("contact test");
         
@@ -81,7 +35,6 @@ export default class {
         this.gmap();
         this.gmLoad();
         this.sendmail();
-        
 
         return `
             <section id="contact">
@@ -90,11 +43,9 @@ export default class {
                         (470)263-6495
                     </div>
                 </div>
-                
-
                 <div class='contact_email_form'>
                     <form id="emailForm" class="gform" method="POST" data-email="cafefore4400@gmail.com" 
-                    action="#"
+                    action="https://script.google.com/macros/s/AKfycbzKQuHQz2gEi9Zn7Ap4YuwhYqZNsjYaBw24s59id0HyH-dViyhCQiGCYacALZxKf4BZ/exec"
                     onsubmit="return handleFormSubmit(event)">
                         <div class="form-row">
                             <div class="contact_name_email">
@@ -145,12 +96,7 @@ export default class {
                 <div class="visit_us">Visit us</div>
                 
                 <div id="googleMap"></div>
-            </section>
-            
-            
-            
+            </section>            
         `
     }
-   
-    
 }
